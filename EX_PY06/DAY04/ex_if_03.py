@@ -30,3 +30,14 @@ elif num<0:
     print(f'{num}은 음수')
 else:
     print(f'{num}은 영')
+
+## ----------------------------------------------------------------------
+# 동네이름 데이터에서 입력 받은 동네이름 해당 여부
+city = ['대구', '부산', '울산', '광주', '대전']
+data = '마산'
+
+if data==city[0] or data==city[1] or data==city[2] or data==city[3] or data==city[4] :
+    print(f'{data}는 광역시입니다')
+
+if data in city:
+    print(f'{data}는 광역시입니다')
