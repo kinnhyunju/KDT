@@ -15,6 +15,7 @@ print(camille['movement_speed'])
 # 심사문제
 keys = input().split()
 values = input().split()
+values = list(map(float,values))    # 값 실수로 바꾸기!
 datas = dict(zip(keys,values))
 print(datas)
 
