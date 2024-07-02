@@ -5,5 +5,11 @@
 # [출력 예시] 2 * 1 = 2
 dan = int(input("숫자 입력 : "))
 num = range(1,10)
+# num = [1,2,3,4,5,6,7,8,9] 로 써도 됨
 for n in num:
     print(f'{dan} * {n} = {dan*n}')
+
+a=['1','2']
+for i in range(len(a)):
+    a[i] = int(a[i])
+    print(a[i],type(a[i]))
