@@ -127,7 +127,7 @@ num = input().split()
 num1 = int(num[0])
 num2 = int(num[1])
 for n in range(num1,num2+1):
-    if n%35==0:                 # if i%2==0 and i%11==0 : 
+    if n%35==0:                 # if i%5==0 and i%7==0 : 
         print('FizzBuzz')
     elif n%5==0:
         print('Fizz')
