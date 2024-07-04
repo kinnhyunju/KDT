@@ -18,4 +18,13 @@ average = sum(maria.values())/len(maria)
 print(average)
 
 
-# [25.8] 심사문제 ===> 아직 안 배운 것 같아서 보류
+# [25.8] 심사문제 ==> 아직 안 배운 부분 같아서 보류
+# keys = input().split()
+# values = map(int,input().split())
+# x = dict(zip(keys,values))
+# for n in x.items():
+#     if n[0] =='delta':
+#         x.pop('delta')
+#     elif n[1]==30:
+#         x.pop(n[0])
+# print(x)
