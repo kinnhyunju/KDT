@@ -9,6 +9,13 @@ def diary_menu():
     print(f"    5. {'식단 일기 종료':^12}")
     print('*'*30)
 
+def man_rate(height,weight,age):
+    rate = 66.47 + (13.75 * weight) + (5* height) - (6.76 * age)
+    return rate
+def woman_rate(height,weight,age):
+    rate = 655.1 + (9.56 * weight) + (1.85 *height) - (4.68 * age)
+    return rate
+
 # 식단 목록, 기초대사량 초기값 기록
 food_list = []
 rate = 0
@@ -32,70 +39,64 @@ while True:
         rate = 0
         while True:
             print(f"{'기초대사량 계산':-^24}")
-            gender = input("당신의 성별을 선택하세요. (뒤로가기는 B 또는 b를 입력하세요.)\n    1. 남     2. 여\n선택 : ")
+            gender = input("당신의 성별을 선택하세요\n    1. 남     2. 여\n선택 : ")
+            
+            if gender.isdecimal():
+                gender = int(gender)
+            else:
+                print('숫자를 입력해주세요.')
+                continue
+            if gender == 1:
+                while True:
+                    info = input("신장(cm), 체중(kg), 나이(만)를 입력하세요 (예 : 130 80 50)\n입력 : ").split()
+                    if len(info) ==3:
+                        for i in range(len(info)):
+                            if info[i].isdecimal():
+                                height = int(info[0])
+                                weight = int(info[1])
+                                age = int(info[2])
+                        rate = rate + 66.47 + (13.75 * weight) + (5* height) - (6.76 * age)
+                        print(f"당신의 기초대사량은 {round(rate)}kcal입니다.")
+                        break
+                    else: 
+                        print('예시에 맞게 신장(cm), 체중(kg), 나이(만)를 다시 입력하세요.\n')
+                    continue
+                break
+                    
 
-            if gender == "B" or gender == "b": break
-            else :
-                if gender.isdecimal():
-                    gender = int(gender)
-                else:
-                    print('숫자를 입력해주세요.')
-                    continue
-                if gender == 1:
-                    while True:
-                        info = input("신장(cm), 체중(kg), 나이(만)를 입력하세요 (예 : 130 80 50)\n입력 : ").split()
-                        if len(info) ==3:
-                            if info[0].isdecimal() and info[1].isdecimal() and info[2].isdecimal():
+            elif gender == 2:
+                while True:
+                    info = input("신장(cm), 체중(kg), 나이(만)를 입력하세요 (예 : 130 80 50)\n입력 : ").split()
+                    if len(info) ==3:
+                        for i in range(len(info)):
+                            if info[i].isdecimal():
                                 height = int(info[0])
                                 weight = int(info[1])
                                 age = int(info[2])
-                                rate = 66.47 + (13.75 * weight) + (5* height) - (6.76 * age)
-                                print(f"당신의 기초대사량은 {round(rate)}kcal입니다.")
-                                break
-                            else: 
-                                print('숫자만 입력하세요')
-                            continue
-                        else: 
-                            print('예시에 맞게 신장(cm), 체중(kg), 나이(만)를 다시 입력하세요.\n')
-                        continue
-                    break              
-                elif gender == 2:
-                    while True:
-                        info = input("신장(cm), 체중(kg), 나이(만)를 입력하세요 (예 : 130 80 50)\n입력 : ").split()
-                        if len(info) ==3:
-                            if info[0].isdecimal() and info[1].isdecimal() and info[2].isdecimal():
-                                height = int(info[0])
-                                weight = int(info[1])
-                                age = int(info[2])
-                                rate = 655.1 + (9.56 * weight) + (1.85 *height) - (4.68 * age)
-                                print(f"당신의 기초대사량은 {round(rate)}kcal입니다.")
-                                break
-                            else: 
-                                print('숫자만 입력하세요')
-                            continue
-                        else: 
-                            print('예시에 맞게 신장(cm), 체중(kg), 나이(만)를 다시 입력하세요.\n')
-                        continue
-                    break 
-                else: 
-                    print(f"{gender}번은 해당되지 않습니다.성별을 다시 선택해 주세요.")
+                        rate = rate + 655.1 + (9.56 * weight) + (1.85 *height) - (4.68 * age)
+                        print(f"당신의 기초대사량은 {round(rate)}kcal입니다.")
+                        break
+                    else: 
+                        print('예시에 맞게 신장(cm), 체중(kg), 나이(만)를 다시 입력하세요.\n')
                     continue
+                break
+            else: 
+                print(f"{gender}번은 해당되지 않습니다.성별을 다시 선택해 주세요.")
+                continue
 
     
 
     elif choice == 2:
         print(f"{'오늘 먹은 음식 추가':-^24}")
-        key = input("오늘 먹은 음식을 입력하세요. (뒤로가기는 B 또는 b를 입력하세요.)\n입력 : ")
-        if key =='B' or key =='b' : continue
-        else:
-            while True:
-                value = input(f"{key}의 칼로리를 입력하세요 : ")
-                if value.isdecimal():
-                    food_list.append([key,value])
-                    break
-                else :
-                    print("칼로리는 숫자로만 입력해야 합니다.\n")
-                    continue
+        key = input("오늘 먹은 음식을 입력하세요 : ")
+        while True:
+            value = input(f"{key}의 칼로리를 입력하세요 : ")
+            if value.isdecimal():
+                food_list.append([key,value])
+                break
+            else :
+                print("칼로리는 숫자로 입력해야 합니다.\n")
+                continue
 
 
     elif choice == 3:
@@ -104,7 +105,7 @@ while True:
         while True:
             for i in range(len(food_list)):
                 print(f'{i+1:>5}. {food_list[i][0]}    {food_list[i][1]}kcal')
-            d_food = input("삭제할 음식의 번호를 입력하세요. (뒤로가기는 B 또는 b를 입력하세요.)\n전체 삭제를 원하면 숫자 0을 입력하세요. \n번호 입력 : ")
+            d_food = input("삭제할 음식의 번호를 입력하세요. 전체 삭제를 원하면 숫자 0을 누르세요. \n입력 : ")
             if d_food.isdecimal():
                 d_food = int(d_food)
                 if d_food ==0:
@@ -113,6 +114,7 @@ while True:
                         print('전체 삭제되었습니다.')
                         food_list.clear() 
                     else:continue
+                    break
                          
                 elif d_food>len(food_list): 
                     print(f'{d_food}번은 목록에 포함되지 않은 숫자입니다.')
@@ -121,8 +123,7 @@ while True:
                     print(f'{food_list[d_food-1][0]}의 자료가 삭제되었습니다.')
                     del food_list[d_food-1]
                 break
-            elif d_food =='B' or d_food =='b' : break
-            else:
+            else : 
                 print('숫자를 입력하세요.')
                 continue
                 
