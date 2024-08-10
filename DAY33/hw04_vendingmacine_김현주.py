@@ -92,7 +92,7 @@ while True:
     else:
         num,coin = menu(coin)
         
-        if inventory_dict['coffe'] <10 or inventory_dict['cream']<10 or inventory_dict['sugar']<10 or inventory_dict['water'] <100 or inventory_dict['cup']<1:
+        if inventory_dict['coffee'] <10 or inventory_dict['cream']<10 or inventory_dict['sugar']<10 or inventory_dict['water'] <100 or inventory_dict['cup']<1:
               no_ingred()
               print(f'{coin}원을 반환합니다.')
               end()
