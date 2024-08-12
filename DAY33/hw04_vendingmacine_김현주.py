@@ -1,3 +1,4 @@
+# 메뉴 출력
 def menu(coin):
         print('-'*40)
         print(f'  커피 자판기 (잔액:{coin}원)')
@@ -10,13 +11,15 @@ def menu(coin):
         num  = int(input('메뉴를 선택하세요: '))
         return num, coin
 
-inventory_dict = {'coffe':100, 'cream':100, 'sugar':100, 
+inventory_dict = {'coffee':100, 'cream':100, 'sugar':100, 
                   'water':500, 'cup':5, 'change':0}
+
 # 재료 현황
-def prepare(coffe,cream,sugar,water, cup, change):
+
+def prepare(coffee,cream,sugar,water, cup, change):
     print('-'*80)
     print('재료현황: ',end='')
-    inventory_dict['coffe']-=coffe
+    inventory_dict['coffee']-=coffee
     inventory_dict['cream']-=cream
     inventory_dict['sugar']-=sugar
     inventory_dict['water']-=100*water
@@ -77,10 +80,10 @@ def end():
 #             end()
 
 
-inventory_dict = {'coffe':100, 'cream':100, 'sugar':100, 
+inventory_dict = {'coffee':100, 'cream':100, 'sugar':100, 
                   'water':500, 'cup':5, 'change':0}
-# coffe_machine = VendingMachine(inventory_dict)
-# coffe_machine.run()
+# coffee_machine = VendingMachine(inventory_dict)
+# coffee_machine.run()
 
 coin = int(input('동전을 투입하세요: '))
 while True:
