@@ -1,0 +1,22 @@
+DT
+C3.0
+C4.5
+C5.0
+CART 범주형,수치형 ==> 모두 처리 회귀/분류
+    sklearn
+
+
+
+
+---- [배운 모델] ----
+KNN
+Linear-model   : LinearRegression => 다중(피처가 여러개), 다항(곡선), 
+                                => 과대적합 해결 => 모델 직접 제어, 즉 규제 (매개변수 alpha의 값 0~강하게)
+                                                                - 릿지 : 영향력이 적은 피처의 기울기(coef)를 0에 가깝게
+                                                                - 라쏘 : 영향력이 적은 피처의 기울기(coef)를 0으로
+                                => 로지스틱 회귀 : 분류 ==> 선형식 결과 (로그) ==> 확률값으로
+                                                - OvR/OvA : 이진 분류기를 여러개 => 클래스수만큼
+                                                - OvO     : 이진 분류기를 여러개 => 클래스수 * (클래스수-1) / 2
+Tree-model     : Decision Tree (CART) => 회귀, 분류 : 범주형(인코딩 필요)/수치형
+                 * 하이퍼파라미터 많음 
+Ensemble-model : Voting, Bagging, -> RandomForest Classifier/Regressor
