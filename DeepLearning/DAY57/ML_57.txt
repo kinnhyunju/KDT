@@ -1,0 +1,33 @@
+[IRIS]
+Feature : 4개
+Tatget : 1개
+Class : 품종 3개 (고유값)
+
+[MNIST-Digit]
+Feature : 64개
+Tatget : 1개
+Class : 0~9 10개 (고유값)
+
+[Fashion MNIST] 패션
+Feature : 784개
+Tatget : 1개
+Class : 0~9 10개 (고유값)
+
+==> 데이터 양이 많으면 학습/검증/테스트용 데이터로더 따로 만들어서 학습/검증/테스트 수행해야함
+
+-------------------------------------------------------------------------------------
+[IRIS] -회귀
+Feature : 3개 sepal_length, sepal_width, petal_width
+Tatget  : 1개 petal_length
+
+
+[IRIS] - 이진분류
+Feature : 3개 sepal_length, sepal_width, petal_width
+Tatget  : 1개 petal_length
+Class   : 품종 2개만 선택 (Setosa와 나머지)
+
+[IRIS] - 다중분류
+Feature : 4개
+Tatget  : 1개
+Class   : 품종 3개 (고유값)
+-------------------------------------------------------------------------------------
