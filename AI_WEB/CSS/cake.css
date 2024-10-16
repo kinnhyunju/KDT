@@ -1,0 +1,23 @@
+/* 공통 스타일 정의 */
+body {
+    background-color: rgb(246, 240, 122);
+    font-family: fantasy;
+    color: black;
+    text-align: center;
+}
+
+h1 {
+    border-bottom: 2px solid rgb(20, 20, 20);
+    color: rgb(35, 35, 70);
+}
+
+em {
+    color: rgb(255, 0, 100);
+}
+
+p.fist {color: rgb(0, 100, 0)}
+p.second {color: rgb(40, 40, 100);}
+
+td {
+    text-align: center;
+  }

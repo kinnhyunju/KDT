@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TABLE 태그</title>
+    <style>
+        body{
+            margin: 50px; padding: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Table 태그</h3> Good Luck   <!--h3태그가 한줄을 다 써서 줄바꿈(br)을 안넣어도 줄이 바뀌어서 텍스트 출력-->
+    <!--상품목록 테이블-->
+    <table border="10px">
+        <tr>
+            <th>번호</th>
+            <th>제품명</th>
+            <th>수량</th>
+            <th>가격</th>
+        </tr>
+
+        <tr>
+            <td>1</td>
+            <td>사과</td>
+            <td>10</td>
+            <td>10000</td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>탄산수</td>
+            <td rowspan="2">1</td>
+            <td rowspan="2">1300</td>
+        </tr>
+
+        <tr>
+            <td>3</td>
+            <td>사이다</td>
+        </tr>
+
+        <tr>
+            <td colspan="2">총합</td>
+            <td colspan="2">12600</td>
+        </tr>
+
+    </table>
+    abc<br>ABC
+    abc<br>ABC
+    abc<br>ABC
+    abc<br>ABC
+</body>
+</html>

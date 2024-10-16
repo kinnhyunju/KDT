@@ -1,0 +1,18 @@
+p {
+    background-color: rgba(70, 186, 254, 0.932);
+}
+
+#secondP {
+    background-color: rgba(179, 255, 192, 0.932);
+    color : navy;
+    font-weight: bold;
+}
+
+body {
+    align-content:center;
+    background-image: url("../images/images.jpg");
+}
+
+.mon {
+    background-color: palevioletred;
+}
