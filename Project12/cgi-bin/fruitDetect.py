@@ -18,10 +18,10 @@ SCRIPT_MODE = True      # Jupyter Mode : False, WEB Mode : True
 cgitb.enable()          # Web상에서 진행상태 메시지를 콘솔에서 확인할수 있도록 하는 기능
 
 # 모델 호출
-SAVE_PATH = r"C:\Users\kdp\KDT_06\KDT\EX_PY06\KDT\KDT-1\Project10\cgi-bin\loss_0.083_score0.976.pth"
+SAVE_PATH = r"C:\Users\kdp\KDT_06\KDT\EX_PY06\KDT\KDT-1\Project12\cgi-bin\models\cnnmodel.pth"
 fruitModel = torch.load(SAVE_PATH, weights_only=False)
 
-MODEL_PATH = '/loss_0.083_score0.976.pth'
+MODEL_PATH = '/cnnmodel.pth'
 
 # 데이터 변형 및 전처리
 transConvert = transforms.Compose(
@@ -54,7 +54,7 @@ def showHTML(msg):
           <title>♥ 과 일 분 류 ♥</title>
          </head>
           
-         <body bgcolor="#F08C8C">   
+         <body bgcolor="azure">   
                 <br>         
                 <form enctype="multipart/form-data" action="" method="post">
                     <div>

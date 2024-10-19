@@ -8,6 +8,7 @@ import pickle  # 단어 사전 저장/불러오기 관련
 from sklearn.feature_extraction.text import TfidfVectorizer  # TF-IDF 사용
 from sklearn.metrics.pairwise import cosine_similarity  # 코사인 유사도 계산
 import torch.nn.functional as F
+from custom import *
 
 # 동작관련 전역 변수----------------------------------
 SCRIPT_MODE = True    # Jupyter Mode : False, WEB Mode : True
@@ -134,22 +135,22 @@ def classify_article(article_text, selected_category, model, vocab_tokens):
 
 # 주제별 모델과 단어 사전 로딩 함수---------------------------------------
 def load_model_and_vocab_for_category(category):
-    model_path = {
-        "경제": r"C:\Users\kdp\KDT_06\KDT\EX_PY06\KDT\Project11\cgi-bin\models\economy_model.pth",
+    model_paths = {
+        "경제": r"C:\Users\kdp\KDT_06\KDT\EX_PY06\KDT\KDT-1\Project12\cgi-bin\models\nlp.pth",
         "생활&문화": r"C:\Users\kdp\KDT_06\KDT\EX_PY06\KDT\Project11\cgi-bin\models\best_model.pth",
         "IT&과학": r"C:\Users\kdp\KDT_06\KDT\EX_PY06\KDT\Project11\cgi-bin\models\it_science_model.pth",
         "사회": r"C:\Users\kdp\KDT_06\KDT\EX_PY06\KDT\Project11\cgi-bin\models\politics_model.pth"
     }
 
-    vocab_path = {
-        "경제": r"C:\Users\kdp\KDT_06\KDT\EX_PY06\KDT\Project11\cgi-bin\wordDict\economy_vocab.pkl",
+    vocab_paths = {
+        "경제": r"C:\Users\kdp\KDT_06\KDT\EX_PY06\KDT\KDT-1\Project12\cgi-bin\vocab.pkl",
         "생활&문화": r"C:\Users\kdp\KDT_06\KDT\EX_PY06\KDT\Project11\cgi-bin\wordDict\word_culture.pkl",
         "IT&과학": r"C:\Users\kdp\KDT_06\KDT\EX_PY06\KDT\Project11\cgi-bin\wordDict\it_science_vocab.pkl",
         "사회": r"C:\Users\kdp\KDT_06\KDT\EX_PY06\KDT\Project11\cgi-bin\wordDict\politics_vocab.pkl"
     }
     
-    model_path = model_path.get(category)
-    vocab_path = vocab_path.get(category)
+    model_path = model_paths.get(category)
+    vocab_path = vocab_paths.get(category)
 
     if model_path and os.path.exists(model_path) and vocab_path and os.path.exists(vocab_path):
         # 모델 및 단어 사전 불러오기
